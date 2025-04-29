@@ -10,7 +10,7 @@ load_dotenv()
 
 app = Flask(__name__)
 
-# Your Account SID and Auth Token from twilio.com/console
+# Your Account SID and Auth Token from twilio.com/console  
 # Set these as environment variables for security
 account_sid = os.environ.get("TWILIO_ACCOUNT_SID")
 auth_token = os.environ.get("TWILIO_AUTH_TOKEN")
@@ -75,7 +75,7 @@ def incoming_sms():
         # Start a new intake if we haven't seen this number before
         handle_patient_intake_start(sender_phone_number)
     else:
-        # Continue the existing intake flow
+        # Continue the existing intake flow hello test
         handle_patient_intake_continue(sender_phone_number, message_body)
 
     return Response(status=200)
